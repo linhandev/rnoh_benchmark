@@ -48,14 +48,12 @@ const RNDiplomacyApp = (): React.Node => {
       return false;
     };
 
-    BackHandler.addEventListener("hardwareBackPress", handleHardwareBackPress);
+    const backHandlerSubscription = BackHandler.addEventListener(
+      "hardwareBackPress",
+      handleHardwareBackPress
+    );
 
-    return () => {
-      BackHandler.removeEventListener(
-        "hardwareBackPress",
-        handleHardwareBackPress
-      );
-    };
+    return () => backHandlerSubscription.remove();
   }, [levelNumber, handleBackPress]);
 
   const activeSceneModule =
