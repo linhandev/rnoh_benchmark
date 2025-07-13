@@ -7,8 +7,8 @@
     "lint": "eslint .",
     "start": "hdc rport tcp:8081 tcp:8081 && react-native start",
     "test": "jest",
-    "dev": "react-native bundle-harmony --dev=false --minify=true",
-    "hbc": "react-native bundle-harmony --dev=false --minify=true --bundle-output /tmp/77482668562255451758/bundle.harmony.js && ./node_modules/react-native/sdks/hermesc/linux64-bin/hermesc -O --emit-binary /tmp/77482668562255451758/bundle.harmony.js -out ./hermes_bundle.hbc"
+    "bundle:js": "react-native bundle-harmony --dev=false --minify=true",
+    "bundle:hbc": "react-native bundle-harmony --dev=false --minify=true --js-engine=hermes --hermesc-dir ../../node_modules/react-native/sdks/hermesc"
   },
   "dependencies": {
     "react": "18.3.1",
